@@ -59,3 +59,15 @@ func GetResponse(first string, last string) {
 		// fmt.Printf("joke.Value.joke: %s\n", joke.Value["joke"])
 	}
 }
+
+
+func GetJson(url string, target interface{}) error {
+	resp, err := client.Get(url)
+	if err != nil {
+		return err
+	}
+
+	defer resp.Body.Close()
+
+	return json.NewDecoder(resp.Body).Decode(target)
+}
