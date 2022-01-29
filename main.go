@@ -24,3 +24,18 @@ type ResponseValue struct {
 	Joke string
 	Categories []string
 }
+
+func GetName() {
+	url := "https://names.mcquay.me/api/v0"
+
+	var name Name
+
+	err := GetJson(url, &name)
+	if err != nil {
+			fmt.Printf("error getting name: %s\n", err.Error())
+	} else {
+		fmt.Printf("First Name: %s\n", name.FirstName)
+		fmt.Printf("Last Name: %s\n", name.LastName)
+		GetResponse(name.FirstName, name.LastName)
+	}
+}
