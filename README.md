@@ -14,7 +14,7 @@ An app that fetches a random name and joke, and combines them.
  1. User can view a random joke
 
 ## Preview
- <img src="./assets/joke-preview.gif">
+ <img src="./assets/wildfire-preview.gif">
 
  ## Development
 
