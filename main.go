@@ -33,11 +33,13 @@ func GetName() string {
 	err := GetJson(url, &name)
 	if err != nil {
 			fmt.Printf("error getting name: %s\n", err.Error())
-	} else {
-	 return GetResponse(name.FirstName, name.LastName)
+			return "Error, see terminal"
 	}
+	// else {
+	//  return GetResponse(name.FirstName, name.LastName)
+	// }
 	 return GetResponse(name.FirstName, name.LastName)
-
+	// return
 }
 
 func GetResponse(first string, last string) string {
@@ -48,14 +50,16 @@ func GetResponse(first string, last string) string {
 	err := GetJson(urlAugmented, &response)
 	if err != nil {
 			fmt.Printf("error getting name: %s\n", err.Error())
-	} else {
-		fmt.Printf(response.Value.Joke)
-		return response.Value.Joke
+			return "Error, see terminal"
 	}
+	// else {
+		// fmt.Printf(response.Value.Joke)
+		// return response.Value.Joke
+	// }
 		return response.Value.Joke
+		// return
 
 }
-
 
 func GetJson(url string, target interface{}) error {
 	resp, err := client.Get(url)
@@ -68,15 +72,9 @@ func GetJson(url string, target interface{}) error {
 	return json.NewDecoder(resp.Body).Decode(target)
 }
 
-// func main() {
-// 	client = &http.Client{Timeout: 10 * time.Second}
-// 	GetName()
-// }
-
 func main(){
 	http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
 		client = &http.Client{Timeout: 10 * time.Second}
-		// GetName()
 		var punchLine string = GetName()
 		w.Write([]byte(punchLine))
 	})
