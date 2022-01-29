@@ -8,6 +8,7 @@ An app that fetches a random name and joke, and combines them.
 ## Technologies Used
 
   - Go
+  - HTTPie
 
 
   ## Features
@@ -24,7 +25,10 @@ An app that fetches a random name and joke, and combines them.
     git clone https://github.com/kusholhuq/wildfire-backend-assessment.git
     cd wildfire-backend-assessment
     ```
- 1. Once in the project directory, run the main.go file
+ 1. Once in the project directory, run the main.go file to start the server
     ``` bash
     go run main.go
     ```
+  1. Open another terminal window and make a GET request to port 5000 (Below HTTPie is being used, but Postman, the browser or any other service also works)
+
+    http --body localhost:5000
