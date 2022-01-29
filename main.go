@@ -35,11 +35,7 @@ func GetName() string {
 			fmt.Printf("error getting name: %s\n", err.Error())
 			return "Error, see terminal"
 	}
-	// else {
-	//  return GetResponse(name.FirstName, name.LastName)
-	// }
 	 return GetResponse(name.FirstName, name.LastName)
-	// return
 }
 
 func GetResponse(first string, last string) string {
@@ -52,13 +48,7 @@ func GetResponse(first string, last string) string {
 			fmt.Printf("error getting name: %s\n", err.Error())
 			return "Error, see terminal"
 	}
-	// else {
-		// fmt.Printf(response.Value.Joke)
-		// return response.Value.Joke
-	// }
 		return response.Value.Joke
-		// return
-
 }
 
 func GetJson(url string, target interface{}) error {
