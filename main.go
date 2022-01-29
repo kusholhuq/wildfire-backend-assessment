@@ -39,3 +39,23 @@ func GetName() {
 		GetResponse(name.FirstName, name.LastName)
 	}
 }
+
+func GetResponse(first string, last string) {
+	// url := "http://api.icndb.com/jokes/random?firstName=John&lastName=Doe&limitTo=nerdy"
+	urlAugmented := "http://api.icndb.com/jokes/random?firstName=" + first + "&lastName=" + last + "&limitTo=nerdy"
+
+	var response Response
+
+	err := GetJson(urlAugmented, &response)
+	if err != nil {
+			fmt.Printf("error getting name: %s\n", err.Error())
+	} else {
+		fmt.Printf("Type: %s\n", response.Type)
+		fmt.Printf("Value: %s\n", response.Value)
+		fmt.Printf("Value.Id: %s\n", response.Value.Id)
+		fmt.Printf("Value.Joke: %s\n", response.Value.Joke)
+		fmt.Printf("Value.Categories: %s\n", response.Value.Categories)
+		// fmt.Printf("PunchLine: %s\n", joke.PunchLine)
+		// fmt.Printf("joke.Value.joke: %s\n", joke.Value["joke"])
+	}
+}
