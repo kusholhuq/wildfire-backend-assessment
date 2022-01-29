@@ -34,8 +34,8 @@ func GetName() {
 	if err != nil {
 			fmt.Printf("error getting name: %s\n", err.Error())
 	} else {
-		fmt.Printf("First Name: %s\n", name.FirstName)
-		fmt.Printf("Last Name: %s\n", name.LastName)
+		// fmt.Printf("First Name: %s\n", name.FirstName)
+		// fmt.Printf("Last Name: %s\n", name.LastName)
 		GetResponse(name.FirstName, name.LastName)
 	}
 }
@@ -50,11 +50,11 @@ func GetResponse(first string, last string) {
 	if err != nil {
 			fmt.Printf("error getting name: %s\n", err.Error())
 	} else {
-		fmt.Printf("Type: %s\n", response.Type)
-		fmt.Printf("Value: %s\n", response.Value)
-		fmt.Printf("Value.Id: %s\n", response.Value.Id)
-		fmt.Printf("Value.Joke: %s\n", response.Value.Joke)
-		fmt.Printf("Value.Categories: %s\n", response.Value.Categories)
+		// fmt.Printf("Type: %s\n", response.Type)
+		// fmt.Printf("Value: %s\n", response.Value)
+		// fmt.Printf("Value.Id: %s\n", response.Value.Id)
+		fmt.Printf(response.Value.Joke)
+		// fmt.Printf("Value.Categories: %s\n", response.Value.Categories)
 		// fmt.Printf("PunchLine: %s\n", joke.PunchLine)
 		// fmt.Printf("joke.Value.joke: %s\n", joke.Value["joke"])
 	}
